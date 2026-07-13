@@ -1,0 +1,42 @@
+name: Validate public repository
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Validate tracked files and release metadata
+        shell: pwsh
+        run: .\scripts\validate-public-repo.ps1 -SkipArtifactHashes
+      - name: Compile Python sources and run protocol tests
+        shell: pwsh
+        run: |
+          python -m py_compile nexaflow.py remote_host.py recorder_core.py
+          python -m unittest discover -s tests -v
+      - name: Check extension JavaScript
+        shell: pwsh
+        run: |
+          node --check chrome-extension\src\background.js
+          node --check chrome-extension\src\contentScript.js
+          node --check chrome-extension\src\recordingSafety.js
+          node chrome-extension\tests\recordingSafety.test.js
+          node --check website\assets\site.js
+          node --check website\site-data\releases.js
+      - name: Check mobile utilities and repository JSON
+        shell: pwsh
+        run: |
+          node --check mobile-app\connection-utils.cjs
+          node --check mobile-app\remote-ui-utils.cjs
+          node --test mobile-app\tests\connection-utils.test.cjs mobile-app\tests\remote-ui-utils.test.cjs
+          Get-Content -Raw mobile-app\app.json | ConvertFrom-Json | Out-Null
+          Get-Content -Raw mobile-app\package.json | ConvertFrom-Json | Out-Null
+          Get-Content -Raw chrome-extension\manifest.json | ConvertFrom-Json | Out-Null

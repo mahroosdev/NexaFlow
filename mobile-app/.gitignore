@@ -1,0 +1,15 @@
+node_modules/
+.expo/
+.expo-check/
+.expo-polish-check/
+.expo-home/
+.eas-home/
+.npm-cache/
+.npm-cache-*/
+expo-server.log
+expo-server.err.log
+eas-build-*.log
+eas-build-*.txt
+eas-build-*.json
+*.apk
+*.aab

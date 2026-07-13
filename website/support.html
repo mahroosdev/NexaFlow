@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NexaFlow support for installation, pairing, workflow playback, and release verification.">
+  <title>NexaFlow Support</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="site-data/releases.js" defer></script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="index.html" aria-label="NexaFlow home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+        <span>NexaFlow</span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-button><span></span></button>
+      <div class="nav-menu" data-menu>
+        <a href="index.html">Overview</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="#common-issues">Common issues</a>
+        <a href="privacy.html">Privacy</a>
+        <a class="button primary" href="#contact" aria-current="page">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="shell">
+      <span class="eyebrow">Product support</span>
+      <h1>Resolve setup and connection issues.</h1>
+      <p class="lead">Start with the checks below. Submit a public support ticket only when the problem remains.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="common-issues">
+      <div class="shell support-layout">
+        <div>
+          <span class="eyebrow">Fast checks</span>
+          <h2>Most problems can be isolated in a few steps.</h2>
+          <div class="support-options">
+            <div class="support-option">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg>
+              <div>
+                <h3>Windows setup</h3>
+                <p>Confirm Windows 10 or 11, run the current v1.0.0 installer, and accept the first firewall request when Remote Access starts.</p>
+              </div>
+            </div>
+            <div class="support-option">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+              <div>
+                <h3>Android pairing</h3>
+                <p>Put the phone and PC on the same Wi-Fi or phone hotspot. Enter the address shown by NexaFlow Desktop and approve the named device.</p>
+              </div>
+            </div>
+            <div class="support-option">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <div>
+                <h3>Remote screen</h3>
+                <p>Keep Remote Access on, verify the paired status, then try Balanced quality before Sharp on slower local networks.</p>
+              </div>
+            </div>
+            <div class="support-option">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18"/><circle cx="7" cy="7" r=".6" fill="currentColor" stroke="none"/><circle cx="10" cy="7" r=".6" fill="currentColor" stroke="none"/></svg>
+              <div>
+                <h3>Chrome extension</h3>
+                <p>Extract the ZIP before choosing Load unpacked. Select the folder that directly contains manifest.json.</p>
+              </div>
+            </div>
+            <div class="support-option">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg>
+              <div>
+                <h3>File verification</h3>
+                <p>Use the checksum page to confirm the setup package was downloaded without corruption or substitution.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="support-form" id="contact" data-support-form>
+          <span class="eyebrow">Open a support issue</span>
+          <h2>Describe the problem.</h2>
+          <div class="field">
+            <label for="product">Product</label>
+            <select id="product" name="product" required>
+              <option>Windows Desktop</option>
+              <option>Android Companion</option>
+              <option>Chrome Extension</option>
+              <option>Website or download</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="subject">Short issue title</label>
+            <input id="subject" name="subject" type="text" maxlength="120" required>
+          </div>
+          <div class="field">
+            <label for="message">What happened?</label>
+            <textarea id="message" name="message" maxlength="4000" required></textarea>
+          </div>
+          <p class="form-note">Support tickets are public. Remove passwords, pairing tokens, private screenshots, IP addresses, and workflow data before submitting.</p>
+          <button class="button primary block" type="submit">
+            Submit support request
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </button>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section gray">
+      <div class="shell cta-band">
+        <div>
+          <h2>Installing for the first time?</h2>
+          <p>Use the platform-specific instructions and current checksums.</p>
+        </div>
+        <a class="button dark" href="downloads.html">
+          Open downloads
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+            <span>NexaFlow</span>
+          </a>
+          <p>Local-first desktop automation with approved Android and Chrome companions. No cloud relay, ever.</p>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="index.html#products">Products</a>
+            <a href="index.html#workflow">Workflow</a>
+            <a href="downloads.html">Downloads</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy policy</a>
+            <a href="release-checksums-sha256.txt">Checksums</a>
+          </div>
+          <div class="footer-col">
+            <h4>Project</h4>
+            <a href="https://github.com/mahroosdev/NexaFlow" target="_blank" rel="noopener">Repository</a>
+            <a href="https://github.com/mahroosdev/NexaFlow/issues/new" target="_blank" rel="noopener">Report an issue</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Mahroos Mahthie. NexaFlow v1.0.0 — Windows and Android release.</span>
+        <span>Built for local networks, by design.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

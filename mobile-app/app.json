@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "NexaFlow",
+    "slug": "nexaflow-mobile",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#F7FBFE"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.nexaflow.mobile",
+      "versionCode": 101,
+      "usesCleartextTraffic": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F7FBFE"
+      },
+      "permissions": [
+        "INTERNET"
+      ]
+    },
+    "ios": {
+      "icon": "./assets/icon.png",
+      "bundleIdentifier": "com.nexaflow.mobile",
+      "buildNumber": "1.0.0",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "NexaFlow connects to NexaFlow Desktop on your local Wi-Fi network when you choose Local Wi-Fi pairing."
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c36db9d2-8b26-4af1-bb9a-1d8606014489"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}

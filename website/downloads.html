@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download and install NexaFlow v1.0.0 for Windows and Android, or get the manual Chrome extension package.">
+  <title>Download NexaFlow v1.0.0</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="site-data/releases.js" defer></script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="index.html" aria-label="NexaFlow home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+        <span>NexaFlow</span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-button><span></span></button>
+      <div class="nav-menu" data-menu>
+        <a href="index.html">Overview</a>
+        <a href="#installers">Installers</a>
+        <a href="#stores">Stores</a>
+        <a href="#integrity">Verify</a>
+        <a href="support.html">Support</a>
+        <a class="button primary" href="#installers" aria-current="page">
+          Downloads
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="shell">
+      <span class="eyebrow">Current release</span>
+      <h1>Download NexaFlow v<span data-release-version>1.0.0</span>.</h1>
+      <p class="lead">Windows and Android use installation packages. Chrome is provided as a manual extension ZIP and does not use an installer.</p>
+      <div class="release-status" data-release-notice><span class="dot" aria-hidden="true"></span>Checking release availability.</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section gray" id="installers">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="eyebrow">Installation packages</span>
+          <h2>Choose the application you need.</h2>
+          <p>A website can start a secure download, but Windows and Android always require the user to confirm installation.</p>
+        </div>
+        <div class="download-list" data-download-list></div>
+      </div>
+    </section>
+
+    <section class="section" id="stores">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="eyebrow">Platform channels</span>
+          <h2>Direct packages and future store releases are different.</h2>
+          <p>The APK is for direct Android installation. Google Play uses a signed AAB submitted privately through Play Console and never presents that AAB as a user download.</p>
+        </div>
+        <div class="channel-grid">
+          <article class="channel">
+            <span class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg>
+            </span>
+            <h3>Windows direct setup</h3>
+            <p>The Windows ZIP includes the EXE installer and the PDF user guide in one download.</p>
+            <span class="status-label" data-status-label>Release upload pending</span>
+          </article>
+          <article class="channel">
+            <span class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14"/><path d="m6 11 6 6 6-6"/><path d="M4 21h16"/></svg>
+            </span>
+            <h3>Google Play</h3>
+            <p>The Android Store AAB is reserved for Play Console. The public store listing is not live yet.</p>
+            <span class="status-label">Store listing pending</span>
+          </article>
+          <article class="channel">
+            <span class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18"/><circle cx="7" cy="7" r=".6" fill="currentColor" stroke="none"/><circle cx="10" cy="7" r=".6" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <h3>Chrome Web Store</h3>
+            <p>The current ZIP supports manual Developer Mode installation until a store listing is published.</p>
+            <span class="status-label">Store listing pending</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gray" id="integrity">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="eyebrow">Release integrity</span>
+          <h2>Verify files before installation.</h2>
+          <p>Compare the SHA-256 value of a downloaded file with the published checksum.</p>
+        </div>
+        <table class="integrity-table">
+          <thead><tr><th>Package</th><th>Format</th><th>SHA-256</th></tr></thead>
+          <tbody data-integrity-table></tbody>
+        </table>
+        <div class="actions spaced-actions">
+          <a class="button ghost" href="release-checksums-sha256.txt">Open full checksum file</a>
+          <a class="button ghost" href="privacy.html">Read privacy policy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+            <span>NexaFlow</span>
+          </a>
+          <p>Local-first desktop automation with approved Android and Chrome companions. No cloud relay, ever.</p>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="index.html#products">Products</a>
+            <a href="index.html#workflow">Workflow</a>
+            <a href="downloads.html">Downloads</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy policy</a>
+            <a href="release-checksums-sha256.txt">Checksums</a>
+          </div>
+          <div class="footer-col">
+            <h4>Project</h4>
+            <a href="https://github.com/mahroosdev/NexaFlow" target="_blank" rel="noopener">Repository</a>
+            <a href="https://github.com/mahroosdev/NexaFlow/issues/new" target="_blank" rel="noopener">Report an issue</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Mahroos Mahthie. NexaFlow v1.0.0 — Windows and Android release.</span>
+        <span>Built for local networks, by design.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NexaFlow Companion</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="top">
+        <img src="../icons/nexaflow.svg" alt="" class="logo">
+        <div>
+          <h1>NexaFlow</h1>
+          <p>Chrome Companion</p>
+        </div>
+        <span id="statusPill" class="pill">Offline</span>
+      </header>
+
+      <section class="panel">
+        <div class="section-title">Desktop connection</div>
+        <div class="grid two">
+          <label>
+            Host
+            <input id="desktopHost" type="text" spellcheck="false" value="127.0.0.1">
+          </label>
+          <label>
+            Port
+            <input id="desktopPort" type="text" inputmode="numeric" value="8765">
+          </label>
+        </div>
+        <p class="hint">Click Pair, then approve the request in NexaFlow Desktop.</p>
+        <div class="actions">
+          <button id="pairBtn" class="primary">Pair</button>
+          <button id="disconnectBtn">Disconnect</button>
+          <button id="refreshBtn">Check</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">Browser workflow</div>
+        <div class="workflow-meta">
+          <strong id="workflowName">No workflow yet</strong>
+          <span id="workflowCount">0 events</span>
+        </div>
+        <div class="actions">
+          <button id="recordBtn" class="danger">Start Recording</button>
+          <button id="stopBtn">Stop</button>
+          <button id="playWorkflowBtn" class="primary">Play Last</button>
+        </div>
+        <div class="actions">
+          <button id="exportBtn">Export</button>
+          <button id="importBtn">Import</button>
+          <button id="clearBtn">Clear</button>
+        </div>
+        <input id="importFile" type="file" accept="application/json" hidden>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">Desktop quick controls</div>
+        <div class="command-grid">
+          <button data-command="record">Record</button>
+          <button data-command="play">Play</button>
+          <button data-command="pause">Pause</button>
+          <button data-command="stop">Stop</button>
+        </div>
+      </section>
+
+      <section class="panel muted">
+        <div class="section-title">About</div>
+        <p>NexaFlow Companion records browser workflows and controls NexaFlow Desktop after user-approved pairing.</p>
+        <p>Version 1.0.0</p>
+        <div class="link-row">
+          <a href="https://web-nexaflow.netlify.app/support" target="_blank" rel="noreferrer">Support</a>
+          <a href="https://web-nexaflow.netlify.app/privacy" target="_blank" rel="noreferrer">Privacy</a>
+        </div>
+      </section>
+
+      <p id="message" class="message" role="status"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NexaFlow is a local-first Windows automation app with approved Android and Chrome companions for recording and controlling workflows through local connections.">
+  <title>NexaFlow — Local-First Desktop Automation</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <meta name="theme-color" content="#060b13">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NexaFlow">
+  <meta property="og:title" content="NexaFlow — Local-First Desktop Automation">
+  <meta property="og:description" content="Record on Windows. Control approved workflows from Android over your local network and from Chrome on the same PC.">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="site-data/releases.js" defer></script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="index.html" aria-label="NexaFlow home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </span>
+        <span>NexaFlow</span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-button><span></span></button>
+      <div class="nav-menu" data-menu>
+        <a href="#products">Products</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#security">Security</a>
+        <a href="support.html">Support</a>
+        <a class="button primary" href="downloads.html">
+          Downloads
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="shell hero-inner">
+      <div class="hero-content">
+        <span class="hero-badge"><span class="dot" aria-hidden="true"></span>Local network only — no cloud relay</span>
+        <h1>Automate Windows. <em>Control it from anywhere in the room.</em></h1>
+        <p class="lead">Record and replay desktop workflows on Windows, then monitor and drive playback from Android over your local network or from Chrome on the same PC.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="downloads.html#windows">
+            Get NexaFlow v<span data-release-version>1.0.0</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          </a>
+          <a class="button ghost on-dark" href="#workflow">See how it works</a>
+        </div>
+        <div class="hero-facts">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg>
+            Windows desktop, first
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5a16 16 0 0 1 20 0"/><path d="M5 12.5a11 11 0 0 1 14 0"/><path d="M8.5 16.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Local-only approved pairing
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
+            Desktop approval required
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <svg class="hero-diagram" viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of the Windows desktop connected to Android and Chrome companions">
+          <defs>
+            <linearGradient id="nf-link-gradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#049fbf"/>
+              <stop offset="1" stop-color="#6fe9ff"/>
+            </linearGradient>
+          </defs>
+
+          <path class="link" d="M142,95 C170,95 170,170 192,190"/>
+          <path class="link" d="M132,305 C165,305 165,230 192,210"/>
+          <path class="link" d="M320,200 C300,200 290,200 270,200"/>
+
+          <circle class="pulse" r="3.2">
+            <animateMotion dur="2.6s" begin="0s" repeatCount="indefinite" path="M142,95 C170,95 170,170 192,190"/>
+          </circle>
+          <circle class="pulse" r="3.2">
+            <animateMotion dur="2.6s" begin="0.6s" repeatCount="indefinite" path="M132,305 C165,305 165,230 192,210"/>
+          </circle>
+          <circle class="pulse" r="3.2">
+            <animateMotion dur="2.6s" begin="1.2s" repeatCount="indefinite" path="M320,200 C300,200 290,200 270,200"/>
+          </circle>
+
+          <rect class="node-shell" x="46" y="56" width="96" height="78" rx="18"/>
+          <svg x="76" y="77" width="36" height="36" viewBox="0 0 24 24" class="node-icon" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg>
+          <text class="node-label" x="94" y="156" text-anchor="middle">Windows</text>
+
+          <rect class="node-shell" x="56" y="266" width="76" height="78" rx="18"/>
+          <svg x="77" y="285" width="34" height="40" viewBox="0 0 24 24" class="node-icon" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+          <text class="node-label" x="94" y="366" text-anchor="middle">Android</text>
+
+          <rect class="node-shell" x="320" y="161" width="100" height="78" rx="18"/>
+          <svg x="352" y="182" width="36" height="36" viewBox="0 0 24 24" class="node-icon" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18"/><circle cx="7" cy="7" r=".6" fill="currentColor" stroke="none"/><circle cx="10" cy="7" r=".6" fill="currentColor" stroke="none"/></svg>
+          <text class="node-label" x="370" y="263" text-anchor="middle">Chrome</text>
+
+          <rect class="hub-shell" x="192" y="161" width="78" height="78" rx="20"/>
+          <svg x="214" y="183" width="34" height="34" viewBox="0 0 24 24" class="hub-icon" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="platform-strip" aria-label="NexaFlow applications">
+      <div class="shell platform-strip-inner">
+        <div class="platform-strip-item">
+          <span class="platform-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg>
+          </span>
+          <div><strong>Desktop</strong><span>Record and manage workflows</span></div>
+        </div>
+        <div class="platform-strip-item">
+          <span class="platform-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+          </span>
+          <div><strong>Android</strong><span>Monitor and control playback</span></div>
+        </div>
+        <div class="platform-strip-item">
+          <span class="platform-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18"/><circle cx="7" cy="7" r=".6" fill="currentColor" stroke="none"/><circle cx="10" cy="7" r=".6" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <div><strong>Chrome</strong><span>Capture browser workflows</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gray" id="products">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="eyebrow">The NexaFlow system</span>
+          <h2>One desktop application. Two focused companions.</h2>
+          <p>The desktop remains the control center. Android and Chrome extend only the workflows they are designed to handle.</p>
+        </div>
+        <div class="product-grid" data-product-grid></div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="shell feature-layout">
+        <div>
+          <span class="eyebrow">Simple operating model</span>
+          <h2>From a recorded workflow to approved remote playback.</h2>
+          <p class="lead">Build the workflow on Windows, choose when Remote Access runs, and approve each new companion from the desktop.</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span>01</span>
+              <div><strong>Record on Windows</strong><p>Capture clicks, keyboard actions, waits, files, and repeatable workflow steps.</p></div>
+            </div>
+            <div class="feature-item">
+              <span>02</span>
+              <div><strong>Save and organize</strong><p>Keep reusable workflows on the desktop where they can be reviewed and selected.</p></div>
+            </div>
+            <div class="feature-item">
+              <span>03</span>
+              <div><strong>Approve a companion</strong><p>Pair Android over trusted Wi-Fi or a hotspot. Chrome connects on the same Windows PC.</p></div>
+            </div>
+            <div class="feature-item">
+              <span>04</span>
+              <div><strong>Control playback</strong><p>Start, pause, resume, or stop saved workflows while monitoring current progress.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            <span class="mockup-title">Weekly-Report.nxflow</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-row">
+              <span class="mockup-step-index">1</span>
+              <div class="mockup-row-text"><strong>Open browser window</strong><span>Click action</span></div>
+              <span class="mockup-status"><span class="dot"></span>Recorded</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-step-index">2</span>
+              <div class="mockup-row-text"><strong>Fill login form</strong><span>Keystroke sequence</span></div>
+              <span class="mockup-status"><span class="dot"></span>Recorded</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-step-index">3</span>
+              <div class="mockup-row-text"><strong>Wait 2.5s for page load</strong><span>Timed wait</span></div>
+              <span class="mockup-status"><span class="dot"></span>Recorded</span>
+            </div>
+            <div class="mockup-row active">
+              <span class="mockup-step-index">4</span>
+              <div class="mockup-row-text"><strong>Click submit</strong><span>Click action</span></div>
+              <span class="mockup-status"><span class="dot"></span>Playing</span>
+            </div>
+            <div class="mockup-footer">
+              <span><strong>4 steps</strong> saved to this workflow</span>
+              <span>Paired with Android</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section night" id="security">
+      <div class="shell safety-layout">
+        <div>
+          <span class="safety-shield" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <span class="eyebrow">Visible by design</span>
+          <h2>The desktop user remains in control.</h2>
+          <p>Remote Access starts only when enabled. New devices require desktop approval, pairing requests expire, and trusted devices can be revoked.</p>
+        </div>
+        <div class="safety-points">
+          <div class="safety-point">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
+            <strong>Approval required</strong><p>A named device request appears on the Windows desktop before first access.</p>
+          </div>
+          <div class="safety-point">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5a16 16 0 0 1 20 0"/><path d="M5 12.5a11 11 0 0 1 14 0"/><path d="M8.5 16.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <strong>Local connection</strong><p>The Android companion connects over the same Wi-Fi or phone hotspot.</p>
+          </div>
+          <div class="safety-point">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            <strong>Clear status</strong><p>NexaFlow shows when Remote Access is running and which phone is connected.</p>
+          </div>
+          <div class="safety-point">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v8"/><path d="M18.4 6.6a9 9 0 1 1-12.8 0"/></svg>
+            <strong>Immediate stop</strong><p>The desktop can stop Remote Access or revoke trusted pairing at any time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="shell cta-band">
+        <div>
+          <h2>Ready to set up NexaFlow?</h2>
+          <p>Start with Windows, then add the companion that fits your workflow.</p>
+        </div>
+        <a class="button primary" href="downloads.html">
+          Open downloads
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+            <span>NexaFlow</span>
+          </a>
+          <p>Local-first desktop automation with approved Android and Chrome companions. No cloud relay, ever.</p>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="index.html#products">Products</a>
+            <a href="index.html#workflow">Workflow</a>
+            <a href="downloads.html">Downloads</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy policy</a>
+            <a href="release-checksums-sha256.txt">Checksums</a>
+          </div>
+          <div class="footer-col">
+            <h4>Project</h4>
+            <a href="https://github.com/mahroosdev/NexaFlow" target="_blank" rel="noopener">Repository</a>
+            <a href="https://github.com/mahroosdev/NexaFlow/issues/new" target="_blank" rel="noopener">Report an issue</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Mahroos Mahthie. NexaFlow v1.0.0 — Windows and Android release.</span>
+        <span>Built for local networks, by design.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

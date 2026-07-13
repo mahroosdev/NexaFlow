@@ -1,0 +1,75 @@
+# ── NexaFlow .gitignore ───────────────────────────────────────────────
+# Keeps the repo to source only. Large binaries are published as GitHub
+# Release assets (the website links to them), NOT committed to the repo.
+
+# Cleanup quarantine (delete this folder; never commit it)
+_REMOVED_review/
+
+# ── Secrets / signing / AI config (NEVER commit) ───────────────
+.claude/
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+keystore.properties
+mobile-app/android/keystore.properties
+mobile-app/android/signing.properties
+
+# ── Release binaries → upload to GitHub Releases, not the repo ─────────
+*.apk
+*.aab
+*.exe
+windows-setup/Installers/*.zip
+chrome-extension/dist/
+chrome-extension/.package-staging/
+website.zip
+/App Versions/App Version */
+tmp/
+
+# ── Python ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ── PyInstaller build output ──────────────────────────────────────────
+windows-setup/build/
+windows-setup/dist/
+windows-setup/package*/
+/build/
+/dist/
+
+# ── Node / Expo / React Native ────────────────────────────────────────
+node_modules/
+mobile-app/.expo/
+mobile-app/.expo-shared/
+npm-debug.log*
+yarn-error.log*
+
+# ── Android / Gradle build ────────────────────────────────────────────
+mobile-app/.android-sdk/
+mobile-app/.android-tmp/
+mobile-app/android/build/
+mobile-app/android/app/build/
+mobile-app/android/.gradle/
+mobile-app/android/local.properties
+*.hprof
+
+# ── Build caches / logs ───────────────────────────────────────────────
+.nexaflow-build/
+.mobile-build-cache/
+.packaging*/
+.build-tools/
+.apk-check*/
+*.log
+
+# ── Bundled build tools (not source) ──────────────────────────────────
+tools/Inno Setup 6/
+tools/innosetup.exe
+
+# ── OS / editor cruft ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp

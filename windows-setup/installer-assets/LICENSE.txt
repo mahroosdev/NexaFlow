@@ -1,0 +1,22 @@
+NexaFlow Proprietary License
+
+Copyright (c) 2026 Mahroos Mahthie. All rights reserved.
+
+Official NexaFlow release binaries may be installed and used for personal or
+internal business purposes. This is a limited, non-exclusive,
+non-transferable license to use the unmodified software.
+
+The source code, assets, and documentation in the public repository are
+viewable for portfolio, security-review, and demonstration purposes. No
+permission is granted to copy, modify, merge, publish, distribute, sublicense,
+sell, or create derivative works from those materials without prior written
+permission from the copyright holder.
+
+You may not redistribute, resell, modify, or reverse engineer NexaFlow except
+where applicable law expressly permits it.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NON-INFRINGEMENT. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE
+COPYRIGHT HOLDER IS NOT LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY
+ARISING FROM USE OF THE SOFTWARE.
