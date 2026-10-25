@@ -6,7 +6,7 @@
 window.NEXAFLOW_RELEASES = {
   "version": "1.0.0",
   "releasedAt": "2026-07-18",
-  "generatedAt": "2026-07-23",
+  "generatedAt": "2026-10-26",
   "published": false,
   "releaseBase": "https://github.com/mahroosdev/NexaFlow/releases/download/v1.0.0/",
   "checksumUrl": "release-checksums-sha256.txt",
@@ -21,8 +21,8 @@ window.NEXAFLOW_RELEASES = {
       "file": "NexaFlow_Windows_v1.0.0.zip",
       "label": "Download Windows package",
       "format": "Setup + PDF guide",
-      "size": "14.31 MiB",
-      "checksum": "d65d67ac019f2f91fb320ba29f7793e98b54964161cd449714633da2dad760c7",
+      "size": "16.12 MiB",
+      "checksum": "3066a32588900fd75c4a3d5baf38c709c553122870870d6e890487b2297e3b1b",
       "install": [
         "Download and extract the Windows ZIP.",
         "Run NexaFlow_Setup.exe and complete installation.",
@@ -39,7 +39,7 @@ window.NEXAFLOW_RELEASES = {
       "label": "Download Android APK",
       "format": "Direct-install APK",
       "size": "60.35 MiB",
-      "checksum": "7aaeef13866cf5a2099935da176544ffcc16dff7781c229728fc38ccdc802e29",
+      "checksum": "6e1086f12f1d9ce7f694c6fb8bbc27072cff25a59703b1fed26d9d7a6bc2d799",
       "install": [
         "Download the APK on the Android phone.",
         "Allow installation from the browser when Android asks.",

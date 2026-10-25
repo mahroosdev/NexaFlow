@@ -4195,9 +4195,9 @@ class NexaFlow(tk.Tk):
         about_links = tk.Frame(ac, bg=C['card'])
         about_links.pack(anchor='w', pady=(8, 0))
         self._ghost_btn(about_links, "Support",
-                        lambda: self._open_url(_support_url())).pack(side='left', padx=(0, 8))
+                        lambda: self._show_notice('support')).pack(side='left', padx=(0, 8))
         self._ghost_btn(about_links, "Privacy",
-                        lambda: self._open_url(_privacy_url())).pack(side='left')
+                        lambda: self._show_notice('privacy')).pack(side='left')
 
     def _remote_status_snapshot(self):
         recent = CFG.get_recent()
@@ -4722,6 +4722,65 @@ class NexaFlow(tk.Tk):
             webbrowser.open(url)
         except Exception:
             messagebox.showinfo("NexaFlow", f"Open this link in your browser:\n{url}")
+
+    def _show_notice(self, notice_type):
+        notices = {
+            'support': {
+                'title': 'NexaFlow Support',
+                'heading': 'Get help with NexaFlow',
+                'body': (
+                    'For installation, pairing, playback, or firewall problems, '
+                    'first confirm that Remote Access is running and that the phone '
+                    'and PC are using the same trusted network.\n\n'
+                    'When reporting a problem, include the NexaFlow version, the '
+                    'steps that caused it, and the visible error message. Do not '
+                    'include passwords, pairing tokens, private screenshots, or '
+                    'sensitive workflow data.\n\n'
+                    'Public support requests are handled through the NexaFlow issue tracker.'
+                )
+            },
+            'privacy': {
+                'title': 'NexaFlow Privacy',
+                'heading': 'Your data stays under your control',
+                'body': (
+                    'NexaFlow stores workflows, settings, logs, and screenshots locally '
+                    'on your Windows PC or Android device. It does not require an account '
+                    'or use a cloud relay.\n\n'
+                    'Android and Windows communicate directly over your trusted local '
+                    'network using HTTP. The desktop user must approve new devices, and '
+                    'trusted devices can be revoked at any time.\n\n'
+                    'Support reports are public when submitted to the issue tracker. '
+                    'Review them carefully and remove private information before sending.'
+                )
+            }
+        }
+        notice = notices.get(notice_type, notices['support'])
+        win = tk.Toplevel(self)
+        _apply_windows_window_icon(win)
+        win.title(notice['title'])
+        win.configure(bg=C['bg'])
+        win.resizable(False, False)
+        win.transient(self)
+        win.grab_set()
+        _show_centered_child(win, self, width=520, height=390)
+
+        frame = tk.Frame(win, bg=C['bg'], padx=22, pady=18)
+        frame.pack(fill='both', expand=True)
+        tk.Label(frame, text=notice['heading'], bg=C['bg'], fg=C['accent'],
+                 font=_f(13, True), anchor='w').pack(fill='x', pady=(0, 12))
+        text_frame = tk.Frame(frame, bg=C['bg'])
+        text_frame.pack(fill='both', expand=True)
+        text = tk.Text(text_frame, wrap='word', height=13, width=58,
+                       bg=C['card'], fg=C['text2'], insertbackground=C['text2'],
+                       relief='flat', borderwidth=0, padx=12, pady=10,
+                       font=_f(9), state='normal')
+        scroll = tk.Scrollbar(text_frame, command=text.yview)
+        text.configure(yscrollcommand=scroll.set)
+        text.insert('1.0', notice['body'])
+        text.configure(state='disabled')
+        text.pack(side='left', fill='both', expand=True)
+        scroll.pack(side='right', fill='y')
+        self._ghost_btn(frame, 'Close', win.destroy).pack(anchor='e', pady=(14, 0))
 
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     #   BUILD EXE  (Enhanced)

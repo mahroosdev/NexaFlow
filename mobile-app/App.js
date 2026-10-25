@@ -5,7 +5,6 @@ import {
   Animated,
   Image,
   KeyboardAvoidingView,
-  Linking,
   Modal,
   Platform,
   Pressable,
@@ -51,8 +50,6 @@ SplashScreen.preventAutoHideAsync().catch(() => {});
 const SETTINGS_PATH = FileSystem.documentDirectory
   ? `${FileSystem.documentDirectory}nexaflow-settings.json`
   : "";
-const SUPPORT_URL = "https://web-nexaflow.netlify.app/support";
-const PRIVACY_URL = "https://web-nexaflow.netlify.app/privacy";
 const FALLBACK_DEVICE_NAME = "NexaFlow Phone";
 
 const light = {
@@ -113,10 +110,6 @@ function formatElapsed(value) {
   const mins = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
   return `${mins}:${secs}`;
-}
-
-function openUrl(url) {
-  Linking.openURL(url).catch(() => Alert.alert("Open link", url));
 }
 
 function useFrameBuffer({ active, baseUrl, token, quality }) {
@@ -187,6 +180,7 @@ export default function App() {
   const [status, setStatus] = useState(null);
   const [themeMode, setThemeMode] = useState("light");
   const [screenQuality, setScreenQuality] = useState("balanced");
+  const [notice, setNotice] = useState(null);
   const [fullscreen, setFullscreen] = useState(false);
   const [workflowIndex, setWorkflowIndex] = useState(null);
   const [workflowMenuOpen, setWorkflowMenuOpen] = useState(false);
@@ -604,6 +598,7 @@ export default function App() {
                   paired={paired}
                   hostInput={hostInput}
                   clearPairing={clearPairing}
+                  showNotice={setNotice}
                 />
               )}
             </View>
@@ -623,6 +618,11 @@ export default function App() {
           visible={fullscreen}
           frame={currentFrame}
           close={() => setFullscreen(false)}
+          colors={colors}
+        />
+        <NoticeModal
+          notice={notice}
+          close={() => setNotice(null)}
           colors={colors}
         />
       </SafeAreaProvider>
@@ -801,7 +801,7 @@ function RemoteScreen(props) {
   );
 }
 
-function SettingsScreen({ colors, themeMode, setThemeMode, screenQuality, setScreenQuality, paired, hostInput, clearPairing }) {
+function SettingsScreen({ colors, themeMode, setThemeMode, screenQuality, setScreenQuality, paired, hostInput, clearPairing, showNotice }) {
   return (
     <ScrollView contentContainerStyle={styles.page}>
       <Text style={styles.pageTitle}>Settings</Text>
@@ -836,15 +836,62 @@ function SettingsScreen({ colors, themeMode, setThemeMode, screenQuality, setScr
         </Pressable>
       </View>
       <View style={styles.linkSection}>
-        <Pressable style={styles.linkButton} onPress={() => openUrl(SUPPORT_URL)}>
+        <Pressable style={styles.linkButton} onPress={() => showNotice('support')}>
           <Ionicons name="help-circle-outline" size={21} color={colors.accent} /><Text style={styles.linkText}>Support</Text>
         </Pressable>
-        <Pressable style={styles.linkButton} onPress={() => openUrl(PRIVACY_URL)}>
+        <Pressable style={styles.linkButton} onPress={() => showNotice('privacy')}>
           <Ionicons name="shield-checkmark-outline" size={21} color={colors.accent} /><Text style={styles.linkText}>Privacy</Text>
         </Pressable>
         <View style={styles.versionRow}><Text style={styles.versionText}>NexaFlow 1.0.0</Text></View>
       </View>
     </ScrollView>
+  );
+}
+
+function NoticeModal({ notice, close, colors }) {
+  if (!notice) return null;
+  const content = notice === 'privacy'
+    ? {
+        title: 'Privacy',
+        icon: 'shield-checkmark-outline',
+        heading: 'Your data stays under your control',
+        paragraphs: [
+          'NexaFlow stores workflows, settings, logs, and screenshots locally on your Windows PC or Android device. It does not require an account or use a cloud relay.',
+          'Android and Windows communicate directly over your trusted local network using HTTP. New devices require desktop approval, and trusted devices can be revoked at any time.',
+          'Support reports are public when submitted to the issue tracker. Remove private information before sending one.'
+        ]
+      }
+    : {
+        title: 'Support',
+        icon: 'help-circle-outline',
+        heading: 'Get help with NexaFlow',
+        paragraphs: [
+          'For installation, pairing, playback, or firewall problems, confirm that Remote Access is running and that the phone and PC use the same trusted network.',
+          'When reporting a problem, include the NexaFlow version, the steps that caused it, and the visible error message.',
+          'Do not include passwords, pairing tokens, private screenshots, or sensitive workflow data in a public support request.'
+        ]
+      };
+  return (
+    <Modal visible animationType="fade" transparent onRequestClose={close}>
+      <View style={styles.modalBackdrop}>
+        <View style={styles.noticePanel}>
+          <View style={styles.modalHeader}>
+            <Ionicons name={content.icon} size={22} color={colors.accent} />
+            <Text style={[styles.modalTitle, { marginLeft: 9 }]}>{content.title}</Text>
+            <Pressable style={styles.iconButton} onPress={close} accessibilityLabel="Close notice">
+              <Ionicons name="close" size={24} color={colors.muted} />
+            </Pressable>
+          </View>
+          <ScrollView contentContainerStyle={styles.noticeContent}>
+            <Text style={styles.noticeHeading}>{content.heading}</Text>
+            {content.paragraphs.map((paragraph) => <Text key={paragraph} style={styles.noticeText}>{paragraph}</Text>)}
+          </ScrollView>
+          <Pressable style={styles.noticeCloseButton} onPress={close}>
+            <Text style={styles.primaryButtonText}>Close</Text>
+          </Pressable>
+        </View>
+      </View>
+    </Modal>
   );
 }
 
@@ -1120,10 +1167,15 @@ function createStyles(c) {
     tabTextActive: { color: c.accentDark },
     modalBackdrop: { flex: 1, alignItems: "center", justifyContent: "center", padding: 24, backgroundColor: "rgba(0,0,0,0.52)" },
     modalPanel: { width: "100%", maxHeight: "70%", backgroundColor: c.panel, borderRadius: 8, overflow: "hidden" },
+    noticePanel: { width: "100%", maxHeight: "78%", backgroundColor: c.panel, borderRadius: 8, overflow: "hidden" },
     modalHeader: { height: 58, flexDirection: "row", alignItems: "center", paddingLeft: 17, paddingRight: 8, borderBottomWidth: 1, borderBottomColor: c.line },
     modalTitle: { flex: 1, color: c.ink, fontSize: 18, fontWeight: "700" },
     iconButton: { width: 42, height: 42, alignItems: "center", justifyContent: "center" },
     workflowList: { paddingHorizontal: 10, paddingBottom: 10 },
+    noticeContent: { padding: 20, paddingBottom: 8 },
+    noticeHeading: { color: c.ink, fontSize: 18, fontWeight: "700", marginBottom: 12 },
+    noticeText: { color: c.muted, fontSize: 14, lineHeight: 21, marginBottom: 14 },
+    noticeCloseButton: { height: 46, margin: 16, alignItems: "center", justifyContent: "center", borderRadius: 7, backgroundColor: c.accent },
     workflowRow: { minHeight: 52, flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 8, borderBottomWidth: 1, borderBottomColor: c.line },
     workflowName: { flex: 1, color: c.ink, fontSize: 14 },
     fullscreenRoot: { flex: 1, backgroundColor: "#000000" },
