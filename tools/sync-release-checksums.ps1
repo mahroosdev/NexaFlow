@@ -8,10 +8,7 @@ $releaseDataPath = Join-Path $repoRoot 'website\site-data\releases.js'
 
 $artifacts = [ordered]@{
     'windows-setup\Installers\NexaFlow_Setup.exe' = $null
-    'windows-setup\Installers\NexaFlow_v1.0_Setup.zip' = 'windows'
     'mobile-app\Android Installer\NexaFlow_Android_Private.apk' = 'android'
-    'mobile-app\Android Installer\NexaFlow_Android_Store.aab' = $null
-    'chrome-extension\dist\NexaFlow_Chrome_Extension_v1.0.zip' = 'chrome'
 }
 
 $hashes = [ordered]@{}

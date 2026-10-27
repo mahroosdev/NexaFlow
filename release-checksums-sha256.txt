@@ -1,15 +1,11 @@
 # NexaFlow SHA-256 Checksums
-# Generated 2026-10-26 Asia/Riyadh
-# Website, Google Play, and Chrome Web Store publishing files
+# Generated 2026-10-27 Asia/Riyadh
+# Public direct-install release files
 
 709b890a4c790c2fd17e4f3a164295e4dabffc5076387d7f029e9e1727ae947e  windows-setup\Installers\NexaFlow_Setup.exe
-3066a32588900fd75c4a3d5baf38c709c553122870870d6e890487b2297e3b1b  windows-setup\Installers\NexaFlow_v1.0_Setup.zip
 6e1086f12f1d9ce7f694c6fb8bbc27072cff25a59703b1fed26d9d7a6bc2d799  mobile-app\Android Installer\NexaFlow_Android_Private.apk
-9951cc8f45aa9efe9e89c3b29a21f73bf17ed45d24da1f97f34b0812d2fd2fd1  mobile-app\Android Installer\NexaFlow_Android_Store.aab
-315389094f0d323ce51c8fcef0880adf12f2d634979178f1810c7ee87eebeb8a  chrome-extension\dist\NexaFlow_Chrome_Extension_v1.0.zip
 
-# Checksums refreshed 2026-10-26 after the current release artifacts were rebuilt or verified.
+# Checksums refreshed 2026-10-27 after the current release artifacts were rebuilt or verified.
 # Windows adds the auto Windows-Firewall rule; Android has the cleartext-LAN fix (verified in the compiled manifest).
 # Android APK is for direct website/private install.
-# Android AAB is for Google Play Console upload, not direct user download.
 # Windows installer is not code-signed yet; SmartScreen may warn until signing is added.

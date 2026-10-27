@@ -68,9 +68,8 @@ try {
       if ($line -notmatch '^([0-9a-fA-F]{64})\s{2}(.+)$') { continue }
       $expected = $matches[1].ToLowerInvariant()
       $path = $matches[2] -replace '\\', [IO.Path]::DirectorySeparatorChar
-      if ($path -like '*NexaFlow_v1.0_Setup.zip') { $expectedWebsiteHashes.windows = $expected }
+      if ($path -like '*NexaFlow_Setup.exe') { $expectedWebsiteHashes.windows = $expected }
       if ($path -like '*NexaFlow_Android_Private.apk') { $expectedWebsiteHashes.android = $expected }
-      if ($path -like '*NexaFlow_Chrome_Extension_v1.0.zip') { $expectedWebsiteHashes.chrome = $expected }
       if (-not (Test-Path -LiteralPath $path)) {
         $errors.Add("Release artifact is missing: $path")
         continue
@@ -82,7 +81,7 @@ try {
     }
 
     $releaseData = Get-Content -Raw -LiteralPath 'website\site-data\releases.js'
-    foreach ($product in @('windows', 'android', 'chrome')) {
+    foreach ($product in @('windows', 'android')) {
       $pattern = '(?s)"id"\s*:\s*"' + $product + '".*?"checksum"\s*:\s*"([0-9a-fA-F]{64})"'
       $match = [regex]::Match($releaseData, $pattern)
       if (-not $match.Success) {
