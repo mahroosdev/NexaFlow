@@ -18,15 +18,15 @@ window.NEXAFLOW_RELEASES = {
       "eyebrow": "Desktop application",
       "name": "NexaFlow for Windows",
       "summary": "Record, organize, schedule, and replay desktop workflows from the main NexaFlow control center.",
-      "file": "NexaFlow_Setup.exe",
-      "label": "Download Windows installer",
-      "format": "Windows setup installer",
-      "size": "16.60 MiB",
-      "checksum": "709b890a4c790c2fd17e4f3a164295e4dabffc5076387d7f029e9e1727ae947e",
+      "file": "NexaFlow_Windows_v1.0.0.zip",
+      "label": "Download Windows package",
+      "format": "Setup + PDF guide",
+      "size": "16.13 MiB",
+      "checksum": "bbd54d12e92088606d43c36e4acb464aa901b7ddf71841275f9026b8af2bcbab",
       "install": [
-        "Download and run NexaFlow_Setup.exe.",
-        "Complete the Windows installation wizard.",
-        "Open the installed app and follow the connection setup."
+        "Download and extract the Windows ZIP.",
+        "Run NexaFlow_Setup.exe and complete the installation.",
+        "Keep the included PDF guide for setup and connection help."
       ]
     },
     {

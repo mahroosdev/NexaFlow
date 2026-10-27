@@ -68,7 +68,7 @@ try {
       if ($line -notmatch '^([0-9a-fA-F]{64})\s{2}(.+)$') { continue }
       $expected = $matches[1].ToLowerInvariant()
       $path = $matches[2] -replace '\\', [IO.Path]::DirectorySeparatorChar
-      if ($path -like '*NexaFlow_Setup.exe') { $expectedWebsiteHashes.windows = $expected }
+      if ($path -like '*NexaFlow_v1.0_Setup.zip') { $expectedWebsiteHashes.windows = $expected }
       if ($path -like '*NexaFlow_Android_Private.apk') { $expectedWebsiteHashes.android = $expected }
       if (-not (Test-Path -LiteralPath $path)) {
         $errors.Add("Release artifact is missing: $path")

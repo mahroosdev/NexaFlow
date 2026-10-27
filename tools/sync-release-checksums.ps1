@@ -7,7 +7,7 @@ $websiteChecksumPath = Join-Path $repoRoot 'website\release-checksums-sha256.txt
 $releaseDataPath = Join-Path $repoRoot 'website\site-data\releases.js'
 
 $artifacts = [ordered]@{
-    'windows-setup\Installers\NexaFlow_Setup.exe' = $null
+    'windows-setup\Installers\NexaFlow_v1.0_Setup.zip' = 'windows'
     'mobile-app\Android Installer\NexaFlow_Android_Private.apk' = 'android'
 }
 

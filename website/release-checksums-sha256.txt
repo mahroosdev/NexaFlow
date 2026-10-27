@@ -2,7 +2,7 @@
 # Generated 2026-10-27 Asia/Riyadh
 # Public direct-install release files
 
-709b890a4c790c2fd17e4f3a164295e4dabffc5076387d7f029e9e1727ae947e  windows-setup\Installers\NexaFlow_Setup.exe
+bbd54d12e92088606d43c36e4acb464aa901b7ddf71841275f9026b8af2bcbab  windows-setup\Installers\NexaFlow_v1.0_Setup.zip
 6e1086f12f1d9ce7f694c6fb8bbc27072cff25a59703b1fed26d9d7a6bc2d799  mobile-app\Android Installer\NexaFlow_Android_Private.apk
 
 # Checksums refreshed 2026-10-27 after the current release artifacts were rebuilt or verified.
